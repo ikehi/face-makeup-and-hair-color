@@ -1,9 +1,9 @@
+--index-url https://download.pytorch.org/whl/cpu
 flask
 flask-cors
 opencv-python
 numpy
 Pillow
-scikit-image
---index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
+scikit-image 
