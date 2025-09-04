@@ -89,13 +89,6 @@ def get_color_scheme(hair_color, lip_color, eyebrow_color, blush_color, eyeshado
             eyeshadow_colors[eyeshadow_color])
 
 def hair(image, parsing, part=17, color=[230, 50, 20]):
-    # Check if parsing and image have compatible dimensions
-    if parsing.shape[:2] != image.shape[:2]:
-        print(f"Warning: Dimension mismatch - image: {image.shape[:2]}, parsing: {parsing.shape[:2]}")
-        # Resize parsing to match image
-        parsing = cv2.resize(parsing.astype(np.uint8), (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST)
-        print(f"Resized parsing to: {parsing.shape}")
-    
     b, g, r = color      #[10, 50, 250]       # [10, 250, 10]
     tar_color = np.zeros_like(image)
     tar_color[:, :, 0] = b
